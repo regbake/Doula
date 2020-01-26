@@ -1,35 +1,78 @@
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Title
+      </h1>
+      <h2 class="subtitle">
+        Subtitle
+      </h2>
+    </div>
+  </div>
+</section>
+
 <p id="notice"><%= notice %></p>
 
-<h1>Give A Gift</h1>
+<section class="section" style="margin-top: 10%">
+  <div class="container">
+    <h1 class="title has-text-centered">
+      Give A Gift
+    </h1>
+    
+    <div class="subtitle has-text-centered">
+      <%= form_for registries_path, method: :get do |f| %> 
+        <p> 
+          <%= f.label "Search: " %> 
+          <%= text_field_tag :q, params[:q] %> 
+          <%= submit_tag "Search", name: nil %>
+        </p>
+      <% end %> 
+    </div>
 
-<%= form_for registries_path, method: :get do |f| %> 
-  <p> 
-    <%= f.label "Search: " %> 
-    <%= text_field_tag :q, params[:q] %> 
-    <%= submit_tag "Search", name: nil %>
-  </p>
-<% end %> 
+    <div class="subtitle has-text-centered" style="width: 80%; margin: auto">
+      <% @registries.each do |registry| %>
+        <!-- Loop over the media object -->
+        <article class="media" style="padding-top: 5%">
+          <figure class="media-left square">
+            <div class="has-text-centered">
+              Name
+            </div>
+          </figure>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+          <div class="media-content" style="margin-left: 20%">
+            <%= registry.name %>
+            <%= link_to 'Show', registry %>
+            <%= link_to 'Edit', edit_registry_path(registry) %>
+            <%= link_to 'Destroy', registry, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
 
-  <tbody>
-    <% @registries.each do |registry| %>
-      <tr>
-        <td><%= registry.name %></td>
-        <td><%= link_to 'Show', registry %></td>
-        <td><%= link_to 'Edit', edit_registry_path(registry) %></td>
-        <td><%= link_to 'Destroy', registry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+          <div class="media-right">
+            <button>button</button>
+          </div>      
+        </article>
+      <% end %>          
+    </div>    
 
-<br>
+    <div class="subtitle has-text-centered" style="margin-top: 10%">
+      <%= link_to 'New Registry', new_registry_path %>
+    </div>
+  </div>
+</section>
 
-<%= link_to 'New Registry', new_registry_path %>
+<footer class="footer" style="width: auto">
+  <div class="has-text-centered" style="width: 85%;
+  border-top: solid gray 1px;
+  margin: auto;
+  margin-top: 18%"
+  >
+  <!-- -->
+  </div>
+
+  <div class="content has-text-centered" style="width: 100%">    
+    <p>
+      Footer
+    </p>
+  </div>
+</footer>
+
+

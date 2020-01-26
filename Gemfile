@@ -22,6 +22,9 @@ gem 'jbuilder', '~> 2.5'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# bulma css
+gem "bulma-rails", "~> 0.0.4"
+
 # Authentication 
 gem 'devise'
 

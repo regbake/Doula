@@ -57,6 +57,8 @@ GEM
     bootsnap (1.4.4)
       msgpack (~> 1.0)
     builder (3.2.3)
+    bulma-rails (0.0.28)
+      sass (~> 3.2)
     byebug (11.0.1)
     capistrano (3.11.0)
       airbrussh (>= 1.0.0)
@@ -251,6 +253,7 @@ PLATFORMS
 DEPENDENCIES
   activemerchant
   bootsnap (>= 1.4.2)
+  bulma-rails (~> 0.0.4)
   byebug
   capistrano
   capistrano-bundler
@@ -281,4 +284,4 @@ RUBY VERSION
    ruby 2.6.3p62
 
 BUNDLED WITH
-   1.17.2
+   1.17.3
